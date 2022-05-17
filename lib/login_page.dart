@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:progress_dialog/progress_dialog.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -37,9 +40,11 @@ class _LoginPageState extends State<LoginPage> {
                     minWidth: double.infinity,
                     child: RaisedButton(
                         onPressed: () {
-                          String username = txtUsername.text;
-                          String password = txtPassword.text;
+                          this._doLogin();
+                          // String username = txtUsername.text;
+                          // String password = txtPassword.text;
                           // if (username == "admin" && password == "admin") {}
+                          // percobaan
                         },
                         child: Text("Login",
                             style: TextStyle(
@@ -50,5 +55,31 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
     );
+  }
+
+  Future _doLogin() async {
+    if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
+      Alert(context: context, title: "Data Tidak Benar", type: AlertType.error)
+          .show();
+      return;
+    }
+
+    ProgressDialog progressDialog = ProgressDialog(context);
+    progressDialog.style(message: "Loading....");
+    progressDialog.show();
+
+    final response = await http.post(
+        Uri.parse('http://localhost:8000/api/login'),
+        body: {'username': txtUsername.text, 'password': txtPassword.text},
+        headers: {'Accept': 'application/json'});
+    progressDialog.hide();
+
+    if (response.statusCode == 200) {
+      Alert(context: context, title: "Login Berhasil", type: AlertType.success)
+          .show();
+    } else {
+      Alert(context: context, title: "Login Gagal", type: AlertType.error)
+          .show();
+    }
   }
 }
