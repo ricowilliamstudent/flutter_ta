@@ -19,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Login"),
+        backgroundColor: Colors.orange,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -27,17 +28,24 @@ class _LoginPageState extends State<LoginPage> {
             padding: EdgeInsets.all(20),
             child: Column(
               children: <Widget>[
+                Image.asset(
+                  'images/suricata.png',
+                  scale: 4,
+                ),
                 TextFormField(
                   controller: txtUsername,
+                  cursorColor: Colors.orange,
                   decoration: InputDecoration(hintText: "Masukan Username"),
                 ),
                 TextFormField(
                   controller: txtPassword,
+                  cursorColor: Colors.orange,
                   obscureText: true,
                   decoration: InputDecoration(hintText: "Masukan Password"),
                 ),
                 ButtonTheme(
                     minWidth: double.infinity,
+                    buttonColor: Colors.orange,
                     child: RaisedButton(
                         onPressed: () {
                           this._doLogin();
@@ -47,8 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                           // percobaan
                         },
                         child: Text("Login",
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 248, 183, 85))))),
+                            style: TextStyle(color: Colors.white)))),
               ],
             ),
           )
