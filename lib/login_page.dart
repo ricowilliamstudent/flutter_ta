@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:progress_dialog/progress_dialog.dart';
+// import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 
@@ -64,15 +64,15 @@ class _LoginPageState extends State<LoginPage> {
       return;
     }
 
-    ProgressDialog progressDialog = ProgressDialog(context);
-    progressDialog.style(message: "Loading....");
-    progressDialog.show();
+    // ProgressDialog progressDialog = ProgressDialog(context);
+    // progressDialog.style(message: "Loading....");
+    // progressDialog.show();
 
     final response = await http.post(
         Uri.parse('http://localhost:8000/api/login'),
         body: {'username': txtUsername.text, 'password': txtPassword.text},
         headers: {'Accept': 'application/json'});
-    progressDialog.hide();
+    // progressDialog.hide();
 
     if (response.statusCode == 200) {
       Alert(context: context, title: "Login Berhasil", type: AlertType.success)
