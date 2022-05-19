@@ -1,7 +1,12 @@
+import 'dart:convert';
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 // import 'package:progress_dialog/progress_dialog.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
+import 'package:sp_util/sp_util.dart';
+import 'LoginModel.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -52,7 +57,6 @@ class _LoginPageState extends State<LoginPage> {
                           // String username = txtUsername.text;
                           // String password = txtPassword.text;
                           // if (username == "admin" && password == "admin") {}
-                          // percobaan
                         },
                         child: Text("Login",
                             style: TextStyle(color: Colors.white)))),
@@ -82,6 +86,20 @@ class _LoginPageState extends State<LoginPage> {
     // progressDialog.hide();
 
     if (response.statusCode == 200) {
+      final loginModel = loginModelFromJson(response.body);
+      var token = loginModel.data.token;
+      // SpUtil.putString("token", token);
+      // SpUtil.putString("name", loginModel.data.user.name);
+      Navigator.pushReplacementNamed(context, 'home-page');
+
+      // print(loginModel.data.token);
+      // print(loginModel.data.token);
+
+      // var responseDecode = jsonDecode(response.body);
+      // bool success = responseDecode['success'];
+      // var data = responseDecode['data'];
+      // var user = data['user'];
+      // var token = data['token'];
       Alert(context: context, title: "Login Berhasil", type: AlertType.success)
           .show();
     } else {
