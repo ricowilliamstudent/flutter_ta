@@ -40,15 +40,32 @@ class _LoginPageState extends State<LoginPage> {
                 TextFormField(
                   controller: txtUsername,
                   cursorColor: Colors.orange,
-                  decoration: InputDecoration(hintText: "Masukan Username"),
+                  decoration: InputDecoration(
+                      hintText: "Masukan Username",
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(color: Colors.orange)),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.orange),
+                      )),
                 ),
+                SizedBox(height: 15),
                 TextFormField(
                   controller: txtPassword,
                   cursorColor: Colors.orange,
                   obscureText: true,
-                  decoration: InputDecoration(hintText: "Masukan Password"),
+                  decoration: InputDecoration(
+                      hintText: "Masukan Password",
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.orange)),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.orange),
+                      )),
                 ),
+                SizedBox(height: 12),
                 ButtonTheme(
+                    height: 50,
                     minWidth: double.infinity,
                     buttonColor: Colors.orange,
                     child: RaisedButton(

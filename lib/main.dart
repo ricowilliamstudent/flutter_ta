@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:realmec2/home_page.dart';
 import 'package:realmec2/login_page.dart';
 import 'package:sp_util/sp_util.dart';
+import 'package:realmec2/info_aplikasi.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
