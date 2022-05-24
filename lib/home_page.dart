@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sp_util/sp_util.dart';
+// import 'package:sp_util/sp_util.dart';
 import 'package:realmec2/info_aplikasi.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,11 +14,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Beranda"),
+          title: const Text("Beranda"),
           backgroundColor: Colors.orange,
           actions: [
             IconButton(
-              icon: Icon(Icons.logout),
+              icon: const Icon(Icons.logout),
               onPressed: () {
                 Navigator.pushReplacementNamed(context, "login-page");
               },
@@ -27,13 +27,14 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Colors.orange[100],
         body: Container(
-          padding: EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(30.0),
           child: GridView.count(
             crossAxisCount: 1,
             children: <Widget>[
+              Image.asset('images/suricata.png', scale: 2, height: 10),
               //Card Serangan
               Card(
-                margin: EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {},
                   splashColor: Colors.orange,
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        Icon(
+                        const Icon(
                           Icons.bug_report,
                           color: Colors.orange,
                           size: 70.0,
@@ -57,20 +58,20 @@ class _HomePageState extends State<HomePage> {
 
               //Card Info Aplikasi
               Card(
-                margin: EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => infoaplikasi()));
+                            builder: (context) => const infoaplikasi()));
                   },
                   splashColor: Colors.orange,
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        Icon(
+                        const Icon(
                           Icons.perm_device_information,
                           color: Colors.orange,
                           size: 70.0,

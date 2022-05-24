@@ -45,11 +45,11 @@ class _LoginPageState extends State<LoginPage> {
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(color: Colors.orange)),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.orange),
                       )),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 TextFormField(
                   controller: txtPassword,
                   cursorColor: Colors.orange,
@@ -58,12 +58,12 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Masukan Password",
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Colors.orange)),
-                      focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.orange)),
+                      focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.orange),
                       )),
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 ButtonTheme(
                     height: 50,
                     minWidth: double.infinity,
@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                           // String password = txtPassword.text;
                           // if (username == "admin" && password == "admin") {}
                         },
-                        child: Text("Login",
+                        child: const Text("Login",
                             style: TextStyle(color: Colors.white)))),
               ],
             ),

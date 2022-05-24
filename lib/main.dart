@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:realmec2/home_page.dart';
 import 'package:realmec2/login_page.dart';
 import 'package:sp_util/sp_util.dart';
-import 'package:realmec2/info_aplikasi.dart';
+// import 'package:realmec2/info_aplikasi.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Aplikasi Mobile IPS',
       routes: {
         'login-page': (context) => LoginPage(),
         'home-page': (context) => HomePage(),
