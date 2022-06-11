@@ -95,9 +95,9 @@ class _LoginPageState extends State<LoginPage> {
     // ProgressDialog progressDialog = ProgressDialog(context);
     // progressDialog.style(message: "Loading....");
     // progressDialog.show();
-
+    // 'php artisan passport:install' in ubuntu server to connect
     final response = await http.post(
-        Uri.parse('http://localhost:8000/api/login'),
+        Uri.parse('http://10.10.15.98:8080/api/login'),
         body: {'username': txtUsername.text, 'password': txtPassword.text},
         headers: {'Accept': 'application/json'});
     // progressDialog.hide();
@@ -120,6 +120,7 @@ class _LoginPageState extends State<LoginPage> {
       Alert(context: context, title: "Login Berhasil", type: AlertType.success)
           .show();
     } else {
+      print(response.body);
       Alert(context: context, title: "Login Gagal", type: AlertType.error)
           .show();
     }

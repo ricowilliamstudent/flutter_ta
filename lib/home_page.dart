@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:sp_util/sp_util.dart';
 import 'package:realmec2/info_aplikasi.dart';
+import 'package:realmec2/log_serangan.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -32,11 +33,17 @@ class _HomePageState extends State<HomePage> {
             crossAxisCount: 1,
             children: <Widget>[
               Image.asset('images/suricata.png', scale: 2, height: 10),
+
               //Card Serangan
               Card(
                 margin: const EdgeInsets.all(8.0),
                 child: InkWell(
-                  onTap: () {},
+                  // Push ke log serangan
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => logserangan()));
+                  },
+                  // End push ke log serangan
                   splashColor: Colors.orange,
                   child: Center(
                     child: Column(
@@ -60,12 +67,14 @@ class _HomePageState extends State<HomePage> {
               Card(
                 margin: const EdgeInsets.all(8.0),
                 child: InkWell(
+                  // Push ke info aplikasi
                   onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const infoaplikasi()));
                   },
+                  // End ke info aplikasi
                   splashColor: Colors.orange,
                   child: Center(
                     child: Column(
