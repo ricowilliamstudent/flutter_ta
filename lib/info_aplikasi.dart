@@ -25,7 +25,7 @@ class infoaplikasi extends StatelessWidget {
                 ' digunakan dengan tujuan membantu administrator jaringan server untuk '
                 ' melakukan monitoring jaringan server jika terjadi serangan yang '
                 ' ditujukan pada jaringan server dan menampilkan list serangan terhadap '
-                ' port SSH dan port Telnet ',
+                ' server yang dilindungi. ',
                 style: TextStyle(
                   height: 1.5,
                   fontSize: 15,

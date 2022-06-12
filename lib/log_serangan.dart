@@ -6,23 +6,68 @@ class logserangan extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: const Text("Log Serangan"), backgroundColor: Colors.orange),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              'images/suricata.png',
-              scale: 4,
-            ),
-            const Text('Log Serangan',
-                style: TextStyle(
-                  height: 1.5,
-                  fontSize: 15,
+      backgroundColor: Color.fromARGB(255, 228, 228, 228),
+      body: Container(
+          margin: EdgeInsets.all(10),
+          child: ListView(
+            children: [
+              // Card
+              Card(
+                elevation: 5,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                        margin: EdgeInsets.all(5),
+                        child: Row(
+                          children: [
+                            Icon(Icons.bug_report),
+                            Text("IP Address :"),
+                          ],
+                        )),
+                    Container(
+                        margin: EdgeInsets.all(5),
+                        child: Row(
+                          children: [
+                            Icon(Icons.timer_sharp),
+                            Text("Waktu :"),
+                          ],
+                        )),
+                    Container(
+                      margin: EdgeInsets.all(5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FlatButton(
+                            color: Colors.green,
+                            child: Text(
+                              'ACCEPT',
+                            ),
+                            onPressed: () {},
+                          ),
+                          SizedBox(width: 30),
+                          FlatButton(
+                            color: Colors.yellow,
+                            child: Text(
+                              'REJECT',
+                            ),
+                            onPressed: () {},
+                          ),
+                          SizedBox(width: 30),
+                          FlatButton(
+                            color: Colors.red,
+                            child: Text(
+                              'DROP',
+                            ),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
                 ),
-                textAlign: TextAlign.justify),
-          ],
-        ),
-      ),
+              ) //End Card
+            ],
+          )),
     );
   }
 }

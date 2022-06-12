@@ -95,11 +95,13 @@ class _LoginPageState extends State<LoginPage> {
     // ProgressDialog progressDialog = ProgressDialog(context);
     // progressDialog.style(message: "Loading....");
     // progressDialog.show();
+
     // 'php artisan passport:install' in ubuntu server to connect
     final response = await http.post(
-        Uri.parse('http://10.10.15.98:8080/api/login'),
+        Uri.parse('http://192.168.43.247:8080/api/login'),
         body: {'username': txtUsername.text, 'password': txtPassword.text},
         headers: {'Accept': 'application/json'});
+
     // progressDialog.hide();
 
     if (response.statusCode == 200) {
